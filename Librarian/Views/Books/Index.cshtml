@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Librarian.Models.Book>
+
+<table class="table">
+    <tr class="table-secondary">
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th></th>
+    </tr>
+    @*@foreach (var book in Model)
+    {
+        <tr>
+            <td> @book.Title</td>
+            <td> @book.Author</td>
+            <td> @book.Genre</td>
+            <td>
+                <a class="btn btn-warning"> Edit </a>
+                <a class="btn btn-danger"> Delete </a>
+            </td>
+        </tr>
+    }*@
+</table>
