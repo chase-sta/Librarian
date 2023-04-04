@@ -12,6 +12,11 @@ namespace Librarian.Models
             Database.EnsureCreated();
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=./Library.sqlite");
+        }
+
         public DbSet<Book> Books { get; set; }
         public DbSet<Reader> Readers { get; set; }
     }
