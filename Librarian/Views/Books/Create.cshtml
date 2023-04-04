@@ -1,0 +1,32 @@
+﻿@model Librarian.Models.Book
+
+<h1>Add a New Book</h1>
+
+<div class="col-6">
+    <form method="post">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Title</label>
+            <input class="form-control" id="formGroupExampleInput" placeholder="Enter the title of the book (e.g. &#34To Kill a Mockingbird&#34)" asp-for="Title">
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Author</label>
+            <input class="form-control" id="formGroupExampleInput2" placeholder="Enter the author of the book (e.g. &#34Harper Lee&#34)" asp-for="Author">
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput3">Genre</label>
+            <input class="form-control" id="formGroupExampleInput3" placeholder="Enter the genre of the book (e.g. &#34Fiction&#34)" asp-for="Genre">
+            <p></p>
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="submit" value="Create" class="btn btn-info form-control" id="formGroupExampleInput4">
+            </div>
+            <div class="col-6">
+                <a class="btn btn-secondary form-control" id="formGroupExampleInput4">Back to Home</a>
+            </div>
+        </div>
+    </form>
+</div>
