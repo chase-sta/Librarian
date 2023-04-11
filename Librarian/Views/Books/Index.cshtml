@@ -1,22 +1,30 @@
 ﻿@model IEnumerable<Librarian.Models.Book>
 
-<table class="table">
-    <tr class="table-secondary">
-        <th>Title</th>
-        <th>Author</th>
-        <th>Genre</th>
-        <th></th>
-    </tr>
-    @*@foreach (var book in Model)
+@if (Model.Count() > 0)
     {
-        <tr>
-            <td> @book.Title</td>
-            <td> @book.Author</td>
-            <td> @book.Genre</td>
-            <td>
-                <a class="btn btn-warning"> Edit </a>
-                <a class="btn btn-danger"> Delete </a>
-            </td>
+    <table class="table">
+        <tr class="table-secondary">
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th></th>
         </tr>
-    }*@
-</table>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td> @book.Title</td>
+                <td> @book.Author</td>
+                <td> @book.Genre</td>
+                <td>
+                    <a class="btn btn-warning"> Edit </a>
+                    <a class="btn btn-danger"> Delete </a>
+                </td>
+            </tr>
+            }
+    </table>
+    }
+    else
+    {
+        <h2> Uh Oh! </h2 >
+        <p> It looks like you have no books added. Please add a book to create your table.</p>
+    }
