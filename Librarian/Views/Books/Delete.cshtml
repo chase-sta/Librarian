@@ -1,0 +1,21 @@
+﻿@model Librarian.Models.Book
+<div class="col-3">
+
+</div>
+<div class="col-6" id="delete-form">
+    <form method="post">
+        <h3>Are you sure you want to delete your item? </h3>
+        <p>Deleting an item is permanent and cannot be restored.</p>
+        <div class="row">
+            <div class="col-6">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </div>
+            <div class="col-6">
+                <a class="btn btn-warning form-control" asp-action="Index">Back to Home</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-3">
+
+</div>

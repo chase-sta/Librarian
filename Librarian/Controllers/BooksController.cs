@@ -42,6 +42,33 @@ namespace Librarian.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return View("Not Found");
+            }
+
+            var dish = _db.Books.FirstOrDefault(d => d.Id == id);
+
+            return View(dish);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id, [Bind("Id, Title, Author, Genre")] Book book)
+        {
+            if (id != book.Id)
+            {
+                return View("Not Found");
+            }
+
+            _db.Remove(book);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }
 
