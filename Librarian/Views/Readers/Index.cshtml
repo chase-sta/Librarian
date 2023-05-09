@@ -18,7 +18,7 @@
                 <td> @reader.Email</td>
                 <td>
                     <a class="btn btn-warning"> Edit </a>
-                    <a class="btn btn-danger"> Delete </a>
+                    <a class="btn btn-danger" asp-route-id="@reader.Id" asp-action="Delete">Delete</a>
                 </td>
             </tr>
         }

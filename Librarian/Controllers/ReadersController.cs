@@ -35,5 +35,32 @@ namespace Librarian.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return View("Not Found");
+            }
+
+            var reader = _db.Readers.FirstOrDefault(r => r.Id == id);
+
+            return View(reader);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id, [Bind("Id, Name, Age, Email")] Reader reader)
+        {
+            if (id != reader.Id)
+            {
+                return View("Not Found");
+            }
+
+            _db.Remove(reader);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }

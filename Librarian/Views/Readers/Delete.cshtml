@@ -1,0 +1,18 @@
+﻿@model Librarian.Models.Reader
+
+<div class="col-6" id="delete">
+    <form method="post">
+        <h3>Are you sure you would like to delete this reader from the library database? </h3>
+        <p>Deleting an item is permanent, so please be careful before proceeding.</p>
+        <div class="row">
+            <div class="col-6">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </div>
+            <div class="col-6">
+                <a class="btn btn-warning form-control" asp-action="Index">Back to Home</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-3">
+</div>
