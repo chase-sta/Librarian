@@ -34,7 +34,4 @@
   <ItemGroup>
     <Folder Include="Views\Books\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Views\Books\Edit.cshtml" />
-  </ItemGroup>
 </Project>
