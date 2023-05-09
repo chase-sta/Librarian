@@ -19,7 +19,7 @@
                 <td> @book.Author</td>
                 <td> @book.Genre</td>
                 <td>
-                    <a class="btn btn-warning"> Edit </a>
+                    <a class="btn btn-warning" asp-route-id="@book.Id" asp-action="Edit"> Edit </a>
                     <a class="btn btn-danger" asp-route-id="@book.Id" asp-action="Delete">Delete</a>
                 </td>
             </tr>

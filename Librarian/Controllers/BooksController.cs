@@ -25,6 +25,33 @@ namespace Librarian.Controllers
             return View(books);
         }
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return View("Not Found");
+            }
+
+            var book = _db.Books.FirstOrDefault(b => b.Id == id);
+
+            return View(book);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, [Bind("Id, Title, Author, Genre")] Book book)
+        {
+            if (id != book.Id)
+            {
+                return View("Not Found");
+            }
+
+            _db.Update(book);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+
+        }
+
         public IActionResult Create()
         {
             return View();
